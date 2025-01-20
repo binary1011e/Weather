@@ -15,7 +15,7 @@ export default function Display({locationData}) {
         
      },[location]);
     function getData() {
-        if (location === undefined) {
+        if (location === undefined || location === null) {
             return;
         }
         console.log(location)
@@ -41,10 +41,12 @@ export default function Display({locationData}) {
           ignore = true;
         }
     }
-    if (locationData === null || locationData === undefined)
-        return <h4>No data yet</h4>          
-    const latitude = locationData["results"][0]["latitude"]
-    const longitude = locationData["results"][0]["longitude"]
+    
+    if (locationData === null || locationData === undefined || locationData.length === 0)
+        return <h4>No data yet</h4>;      
+    console.log(locationData)
+    const latitude = locationData[0]["latitude"]
+    const longitude = locationData[0]["longitude"]
     console.log(latitude)
     console.log(longitude)
     if (JSON.stringify(location) !== JSON.stringify({latitude, longitude})) setLocation({latitude, longitude})
