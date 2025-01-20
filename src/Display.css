@@ -1,0 +1,9 @@
+.hourly-weather {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+}
+.content {
+    font-size: 0.5rem;
+}
